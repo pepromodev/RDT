@@ -12,20 +12,20 @@ public class Partenaire {
 	@Column(name="idPartenaire")
 	private Long idPartenaire;
 	@Column(name="partenaire")
-	private String partenaire;		// doit etre en majuscule !
+	private String partenaire;
 	@Column(name="description")
 	private String description;
-	@OneToMany (fetch=FetchType.EAGER)
+	@OneToMany
 	private List<Convention> listeConventions; 
 
 //	Constructeur	
-	public Partenaire(String partenaire, String description, List<Convention> listeConventions) {
+	public Partenaire() {}
+	public Partenaire(String partenaire, String description) {
 		this.partenaire = partenaire;
 		this.description = description;
-		this.listeConventions = listeConventions;
 	} // Partenaire
 
-//	Setteurs
+	//	Setteurs
 	public void setIdPartenaire(Long idPartenaire)						{ this.idPartenaire = idPartenaire; }
 	public void setPartenaire(String partenaire)						{ this.partenaire = partenaire; }
 	public void setDescription(String description)						{ this.description = description; }
