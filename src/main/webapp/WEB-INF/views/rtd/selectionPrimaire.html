@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<!-- Sélection du partenaire -->
+	<form action="#" method="post" th:action="@{/findpartenaire}">
+		Sélection du partenaire <input type="submit" value="Rechercher">
+		<div class="dropdown">
+			<select th:field="*{rdtPrimaireForm.codePartenaire}" class="form-control">
+				<option th:each="element : ${rdtPrimaireForm.listePartenaires}"
+					th:value="${element.partenaire}"
+					th:text="${element.partenaire + ' - ' + element.description}">
+				</option>
+			</select>
+		</div>
+	</form>
+
+
+</body>
+</html>

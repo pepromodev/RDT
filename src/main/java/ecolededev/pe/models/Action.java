@@ -58,7 +58,7 @@ public class Action {
 		this.dateChoi = dateChoi;
 	} // Action
 
-	//	Setteurs
+//	Setteurs
 	public void setIdAction(Long idAction)				{ this.idAction = idAction; }
 	public void setDescription(String description)		{ this.description = description; }
 	public void setNature(String nature)				{ this.nature = nature; }

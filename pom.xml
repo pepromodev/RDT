@@ -5,9 +5,9 @@
 >
     <modelVersion>4.0.0</modelVersion>
     <groupId>ecolededev.pe</groupId>
-    <artifactId>referentieldestiers</artifactId>
+    <artifactId>RDT</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1</version>
     <name>Spring MVC Application</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -99,17 +99,15 @@
             <artifactId>javax.el-api</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+<!--         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
-        </dependency>
-        <!--
+        </dependency> -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>9.4.1207</version>
+            <version>9.4.1211</version>
         </dependency>
-        -->
         <!-- Spring Data -->
         <dependency>
             <groupId>org.springframework.data</groupId>
@@ -220,7 +218,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.1.1</version>
                 <configuration>
-                    <warName>referentieldestiers-1.0-SNAPSHOT</warName>
+                    <warName>RDT</warName>
                 </configuration>
             </plugin>
             <plugin>
