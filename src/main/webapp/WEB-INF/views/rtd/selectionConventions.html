@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}" />
+</head>
+
+<!-- Sélection de la convention -->
+<div id="fragmentListeConvention" class="dropdown">
+	<select th:field="*{rdtPrimaireForm.idConvention}" class="form-control">
+		<option value="-1" label=""></option>
+		<option th:each="element : ${rdtPrimaireForm.listeConventions}"
+				th:value="${element.idConvention}" th:text="${element.convention}">
+		</option>
+	</select>
+</div>
+
+</html>

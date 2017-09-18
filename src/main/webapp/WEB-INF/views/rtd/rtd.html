@@ -40,6 +40,7 @@
 					url : "descriptionPartenaire?idPartenaire=" + idPartenaireSelectionne,
 					cache : false
 				}).done(function(html) {
+					document.setElementById("descriptionPartenaire").value = "a renseigner";
 					$("#fragmentDescriptionPartenaire").replaceWith(html);
 				});
 				$.ajax({

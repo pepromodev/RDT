@@ -9,7 +9,7 @@ import ecolededev.pe.models.Partenaire;
 public class RdtPrimaireForm {
 	private Long idPartenaire;
 	private Partenaire objetPartenaire = new Partenaire();
-	private String descriptionPartenaire;
+	private String descriptionPartenaire = "";
 	private List<Partenaire> listePartenaires = new ArrayList<>();
 	private List<Convention> listeConventions = new ArrayList<>();
 	private Long idConvention;
