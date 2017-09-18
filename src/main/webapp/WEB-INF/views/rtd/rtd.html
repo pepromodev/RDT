@@ -2,12 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-    <title>Référentiel des Tiers</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
-    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
-    <script src="../../../resources/js/jquery.min.js" th:src="@{/resources/js/jquery.min.js}"></script>
-    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+	<title>Référentiel des Tiers</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}" />
+	<link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+	<script src="../../../resources/js/jquery.min.js" th:src="@{/resources/js/jquery.min.js}"></script>
+	<script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+ 
 </head>
 <body>
 	<div th:replace="fragments/layout :: header"></div>
@@ -29,6 +32,21 @@
 					cache : false
 				}).done(function(html) {
 					$("#signup-modal-body").append(html);
+				});
+			});
+			$('#idPartenaire').on('change', function() {
+				var idPartenaireSelectionne = $('#idPartenaire').val();
+				$.ajax({
+					url : "descriptionPartenaire?idPartenaire=" + idPartenaireSelectionne,
+					cache : false
+				}).done(function(html) {
+					$("#fragmentDescriptionPartenaire").replaceWith(html);
+				});
+				$.ajax({
+					url : "selectionConventions?idPartenaire=" + idPartenaireSelectionne,
+					cache : false
+				}).done(function(html) {
+					$("#fragmentListeConvention").replaceWith(html);
 				});
 			})
 		});

@@ -30,6 +30,7 @@ class HomeController {
 			RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm(); // création des données à echanger
 			model.addAttribute("rdtPrimaireForm", rdtPrimaireForm); // nom utilisé dans thymeleaf
 			rdtPrimaireForm.setListePartenaires(partenaireServices.listePartenaire()); // chargement des données depuis la base
+			
 			return "rtd/rtd";
 		} else {
 			return "home/homeNotSignedIn";

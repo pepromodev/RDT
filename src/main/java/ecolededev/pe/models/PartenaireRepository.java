@@ -13,5 +13,7 @@ public interface PartenaireRepository extends JpaRepository<Partenaire, Long> {
 
 	@Query ("SELECT listeConventions FROM Partenaire WHERE idPartenaire = :idPart")
 	List<Convention> getListeConventions (@Param("idPart") Long idPartenaire);
+	
+	List<Partenaire> findByPartenaire (String partenaire);
 
 } // interface PartenaireRepository

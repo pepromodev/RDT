@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ecolededev.pe.models.Convention;
 import ecolededev.pe.models.Partenaire;
 import ecolededev.pe.models.PartenaireRepository;
 
@@ -26,5 +27,13 @@ public class PartenaireServicesImpl implements IPartenaireServices {
 		return tempo;	
 	} // unPartenaire
 
+	@Override
+	public List<Convention> listeConventions (Long idPartenaire) {
+		return partenaireRepository.getListeConventions(idPartenaire);
+	} // listeConventions
 	
+	@Override
+	public String descriptionPartenaire (Long  idPartenaire) {
+		return partenaireRepository.findOne(idPartenaire).getDescription();
+	} // descriptionPartenaire
 }

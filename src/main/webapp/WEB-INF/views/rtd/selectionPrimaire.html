@@ -5,17 +5,51 @@
 </head>
 <body>
 	<!-- Sélection du partenaire -->
-	<form action="#" method="post" th:action="@{/findpartenaire}">
-		Sélection du partenaire <input type="submit" value="Rechercher">
-		<div class="dropdown">
-			<select th:field="*{rdtPrimaireForm.codePartenaire}" class="form-control">
-				<option th:each="element : ${rdtPrimaireForm.listePartenaires}"
-					th:value="${element.partenaire}"
-					th:text="${element.partenaire + ' - ' + element.description}">
-				</option>
-			</select>
+<!--  <form action="#" method="post" th:action="@{/findpartenaire}"> -->
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<strong>Partenaire</strong>
+			</h4>
 		</div>
-	</form>
+		<div class="panel-body">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2">
+						<div class="dropdown">
+							<select th:field="*{rdtPrimaireForm.idPartenaire}"
+								class="form-control">
+								<option value="-1" label=""></option>
+								<option th:each="element : ${rdtPrimaireForm.listePartenaires}"
+									th:value="${element.idPartenaire}"
+									th:text="${element.partenaire}"></option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-1">Description</div>
+					<div  th:replace="rtd/descriptionPartenaire"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<strong>Convention</strong>
+			</h4>
+		</div>
+		<div class="panel-body">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div  th:replace="rtd/selectionConventions"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	</form> -->
 
 
 </body>
