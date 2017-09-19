@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ServiceRepository extends JpaRepository<Service, Long> {
 
-	@Query ("SELECT listeSupports FROM Service WHERE idService = :idService")
+	@Query ("SELECT listeSupports FROM Service s WHERE s.idService = :idService")
 	List<Support> getListeSupports (@Param("idService") Long idService);
 
 } // interface ServiceRepository

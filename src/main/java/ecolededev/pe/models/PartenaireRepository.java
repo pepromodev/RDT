@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PartenaireRepository extends JpaRepository<Partenaire, Long> {
 
-	@Query ("SELECT listeConventions FROM Partenaire WHERE idPartenaire = :idPart")
+	@Query ("SELECT listeConventions FROM Partenaire p WHERE p.idPartenaire = :idPart")
 	List<Convention> getListeConventions (@Param("idPart") Long idPartenaire);
 	
 	List<Partenaire> findByPartenaire (String partenaire);

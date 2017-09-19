@@ -27,7 +27,7 @@ public class RdtPrimaireForm {
 //	Getteurs
 	public Long getIdPartenaire()					{ return idPartenaire; }
 	public Partenaire getObjetPartenaire()			{ return objetPartenaire; }
-	public String setDescriptionPartenaire()		{ return descriptionPartenaire; }
+	public String getDescriptionPartenaire()		{ return descriptionPartenaire; }
 	public List<Partenaire> getListePartenaires()	{ return listePartenaires; }
 	public List<Convention> getListeConventions()	{ return listeConventions; }
 	public Long getIdConvention()					{ return idConvention; }

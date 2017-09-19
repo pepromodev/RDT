@@ -10,19 +10,19 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ConventionRepository extends JpaRepository<Convention, Long> {
 	
-	@Query ("SELECT listeContacts FROM Convention WHERE idContact = :idContact")
-	List<Contact> getlisteContacts (@Param("idContact") Long idContact);
+	@Query ("SELECT listeContacts FROM Convention c WHERE c.idConvention = :idConvention")
+	List<Contact> getlisteContacts (@Param("idConvention") Long idConvention);
 	
-	@Query ("SELECT listeDocuments FROM Convention WHERE idContact = :idContact")
-	List<Document> getlisteDocuments (@Param("idContact") Long idContact);
+	@Query ("SELECT listeDocuments FROM Convention c WHERE c.idConvention = :idConvention")
+	List<Document> getlisteDocuments (@Param("idConvention") Long idConvention);
 	
-	@Query ("SELECT listeRencontres FROM Convention WHERE idContact = :idContact")
-	List<Rencontre> getlisteRencontres (@Param("idContact") Long idContact);
+	@Query ("SELECT listeRencontres FROM Convention c WHERE c.idConvention = :idConvention")
+	List<Rencontre> getlisteRencontres (@Param("idConvention") Long idConvention);
 	
-	@Query ("SELECT listeActions FROM Convention WHERE idContact = :idContact")
-	List<Action> getlisteActions (@Param("idContact") Long idContact);
+	@Query ("SELECT listeActions FROM Convention c WHERE c.idConvention = :idConvention")
+	List<Action> getlisteActions (@Param("idConvention") Long idConvention);
 	
-	@Query ("SELECT listeServices FROM Convention WHERE idContact = :idContact")
-	List<Service> getlisteServices (@Param("idContact") Long idContact);
+	@Query ("SELECT listeServices FROM Convention c WHERE c.idConvention = :idConvention")
+	List<Service> getlisteServices (@Param("idConvention") Long idConvention);
 
 } // interface ConvenionRepository
