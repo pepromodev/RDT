@@ -3,6 +3,7 @@ package ecolededev.pe.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ecolededev.pe.models.Action;
 import ecolededev.pe.models.Contact;
@@ -11,6 +12,7 @@ import ecolededev.pe.models.ConventionRepository;
 import ecolededev.pe.models.Document;
 import ecolededev.pe.models.Rencontre;
 
+@Service
 public class ConventionServicesImpl  implements IConventionServices {
 
 	@Autowired ConventionRepository conventionRepository;

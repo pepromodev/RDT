@@ -9,7 +9,6 @@ import ecolededev.pe.models.Partenaire;
 public class RdtPrimaireForm {
 	private Long idPartenaire;
 	private Partenaire objetPartenaire = new Partenaire();
-	private String descriptionPartenaire = "";
 	private List<Partenaire> listePartenaires = new ArrayList<>();
 	private List<Convention> listeConventions = new ArrayList<>();
 	private Long idConvention;
@@ -18,7 +17,6 @@ public class RdtPrimaireForm {
 //	Setteurs
 	public void setIdPartenaire(Long idPartenaire)						{ this.idPartenaire = idPartenaire; }
 	public void setObjetPartenaire(Partenaire objetPartenaire)			{ this.objetPartenaire = objetPartenaire; }
-	public void setDescriptionPartenaire(String description)			{ this.descriptionPartenaire = description; }
 	public void setListePartenaires(List<Partenaire> listePartenaires)	{ this.listePartenaires = listePartenaires; }
 	public void setListeConventions(List<Convention> listeConventions)	{ this.listeConventions = listeConventions; }
 	public void setIdConvention(Long idConvention)						{ this.idConvention = idConvention; }
@@ -27,7 +25,6 @@ public class RdtPrimaireForm {
 //	Getteurs
 	public Long getIdPartenaire()					{ return idPartenaire; }
 	public Partenaire getObjetPartenaire()			{ return objetPartenaire; }
-	public String getDescriptionPartenaire()		{ return descriptionPartenaire; }
 	public List<Partenaire> getListePartenaires()	{ return listePartenaires; }
 	public List<Convention> getListeConventions()	{ return listeConventions; }
 	public Long getIdConvention()					{ return idConvention; }

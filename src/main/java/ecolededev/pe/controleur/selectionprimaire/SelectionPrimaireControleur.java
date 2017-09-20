@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ecolededev.pe.models.Convention;
+import ecolededev.pe.services.IConventionServices;
 import ecolededev.pe.services.IPartenaireServices;
 
 @Controller
@@ -17,6 +18,9 @@ public class SelectionPrimaireControleur { // Controlleur de selection partenair
 
 	@Autowired
 	private IPartenaireServices partenaireServices; // lien avec les services 
+	@Autowired
+	private IConventionServices conventionServices; // lien avec les services 
+	
 	
 	@GetMapping("/selectionConventions")
 	String selectionConvention(Principal principal, Model model, @RequestParam (name = "idPartenaire") String idPartenaire) {
@@ -27,7 +31,7 @@ public class SelectionPrimaireControleur { // Controlleur de selection partenair
 		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
 		
 		return("rtd/selectionConventions");
-	}
+	} // selectionConvention
 
 	@GetMapping("/objetPartenaire")
 	String objetPartenaire(Principal principal, Model model, @RequestParam (name = "idPartenaire") String idPartenaire) {
@@ -37,7 +41,17 @@ public class SelectionPrimaireControleur { // Controlleur de selection partenair
 		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
 		
 		return("rtd/objetPartenaire");
-	}
+	} // objetPartenaire
 
+	
+	@GetMapping("/objetConvention")
+	String objetConvention(Principal principal, Model model, @RequestParam (name = "idConvention") String idConvention) {
+		
+		RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
+		rdtPrimaireForm.setObjetConvention(conventionServices.objetConvention(new Long(idConvention)));
+		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
+		
+		return("rtd/objetConvention");
+	} // objetConvention
 	
 } // class SelectionPrimaireControleur

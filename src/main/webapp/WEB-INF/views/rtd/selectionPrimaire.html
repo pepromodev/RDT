@@ -1,60 +1,9 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
-</head>
-<body>
 	<!-- Sélection du partenaire -->
-<!--  <form action="#" method="post" th:action="@{/findpartenaire}"> -->
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h4 class="panel-title">
-				<strong>Partenaire</strong>
-			</h4>
-		</div>
-		<div class="panel-body">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-2">
-						<div class="dropdown">
-							<select th:field="*{rdtPrimaireForm.idPartenaire}"
-								class="form-control">
-								<option value="-1" label=""></option>
-								<option th:each="element : ${rdtPrimaireForm.listePartenaires}"
-									th:value="${element.idPartenaire}"
-									th:text="${element.partenaire}"></option>
-							</select>
-						</div>
-					</div>
-					<div class="col-lg-1">Description</div>
-					<div  th:replace="rtd/objetPartenaire"></div>
-				</div>
-			</div>
-		</div>
+	<div class="dropdown">
+		<select th:field="*{rdtPrimaireForm.idPartenaire}"
+			class="form-control">
+			<option value="-1" label=""></option>
+			<option th:each="element : ${rdtPrimaireForm.listePartenaires}"
+				th:value="${element.idPartenaire}" th:text="${element.partenaire}"></option>
+		</select>
 	</div>
-
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h4 class="panel-title">
-				<strong>Convention</strong>
-			</h4>
-		</div>
-		<div class="panel-body">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4">
-						<div  th:replace="rtd/selectionConventions"></div>
-						<div>Etat</div>
-						<div  th:replace="rtd/etatConvention"></div>
-					</div>
-					<div class="col-lg-1">Objet</div>
-					<div  th:replace="rtd/objetConvention"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- 	</form> -->
-
-
-</body>
-</html>
