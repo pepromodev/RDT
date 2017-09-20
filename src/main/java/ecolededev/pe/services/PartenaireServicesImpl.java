@@ -16,24 +16,12 @@ public class PartenaireServicesImpl implements IPartenaireServices {
 	@Autowired PartenaireRepository partenaireRepository;
 	
 	@Override
-	public List<Partenaire> listePartenaire(){
-		List<Partenaire> liste = partenaireRepository.findAll();
-		return liste;
-	} // listePartenaire
+	public List<Partenaire> listePartenaire()						{ return partenaireRepository.findAll(); }
 	
 	@Override
-	public List<Partenaire>  unPartenaire (String nom) {
-		List<Partenaire> tempo = partenaireRepository.findByPartenaire (nom);
-		return tempo;	
-	} // unPartenaire
+	public List<Convention> listeConventions (Long idPartenaire)	{ return partenaireRepository.getListeConventions(idPartenaire); }
+	
+	@Override
+	public Partenaire objetPartenaire (Long  idPartenaire)			{ return partenaireRepository.findOne(idPartenaire); }
 
-	@Override
-	public List<Convention> listeConventions (Long idPartenaire) {
-		return partenaireRepository.getListeConventions(idPartenaire);
-	} // listeConventions
-	
-	@Override
-	public String descriptionPartenaire (Long  idPartenaire) {
-		return partenaireRepository.findOne(idPartenaire).getDescription();
-	} // descriptionPartenaire
-}
+} // class PartenaireServicesImpl

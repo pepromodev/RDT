@@ -29,15 +29,14 @@ public class SelectionPrimaireControleur { // Controlleur de selection partenair
 		return("rtd/selectionConventions");
 	}
 
-	@GetMapping("/descriptionPartenaire")
-	String descriptionPartenaire(Principal principal, Model model, @RequestParam (name = "idPartenaire") String idPartenaire) {
+	@GetMapping("/objetPartenaire")
+	String objetPartenaire(Principal principal, Model model, @RequestParam (name = "idPartenaire") String idPartenaire) {
 		
-		String description = partenaireServices.descriptionPartenaire(new Long(idPartenaire));
 		RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
-		rdtPrimaireForm.setDescriptionPartenaire(description);
+		rdtPrimaireForm.setObjetPartenaire(partenaireServices.objetPartenaire(new Long(idPartenaire)));
 		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
 		
-		return("rtd/descriptionPartenaire");
+		return("rtd/objetPartenaire");
 	}
 
 	

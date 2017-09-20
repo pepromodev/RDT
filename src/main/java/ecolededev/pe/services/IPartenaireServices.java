@@ -12,8 +12,7 @@ import ecolededev.pe.models.Partenaire;
 public interface IPartenaireServices {
 	
 	public List<Partenaire> listePartenaire();
-	public List<Partenaire> unPartenaire (String nom);
 	public List<Convention> listeConventions(Long  idPartenaire);
-	public String descriptionPartenaire (Long  idPartenaire);
+	public Partenaire objetPartenaire(Long idPartenaire);
 
-}
+} // interface IPartenaireServices

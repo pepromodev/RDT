@@ -34,14 +34,19 @@
 					$("#signup-modal-body").append(html);
 				});
 			});
+			/* Selection du partenaire									  */
+			/*	Récuperer les données relatives au partenaire sélectionné */
+			/*	Afficher les données relatives au partenaire sélectionné  */
 			$('#idPartenaire').on('change', function() {
 				var idPartenaireSelectionne = $('#idPartenaire').val();
 				$.ajax({
-					url : "descriptionPartenaire?idPartenaire=" + idPartenaireSelectionne,
+					url : "objetPartenaire?idPartenaire=" + idPartenaireSelectionne,
 					cache : false
 				}).done(function(html) {
-					$("#fragmentDescriptionPartenaire").replaceWith(html);
+					$("#fragmentObjetPartenaire").replaceWith(html);
 				});
+			/*	Récuperer la liste des conventions du partenaire sélectionné */
+			/*	Afficher la liste des conventions du partenaire sélectionné  */
 				$.ajax({
 					url : "selectionConventions?idPartenaire=" + idPartenaireSelectionne,
 					cache : false
