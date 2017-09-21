@@ -1,8 +1,8 @@
 <!-- Sélection de la convention -->
-<div id="fragmentListeConvention" class="dropdown">
-	<select th:field="*{rdtPrimaireForm.idConvention}" class="form-control">
+
+<div id="fragmentListeConventions" class="dropdown">
+	<select th:field="*{rdtPrimaireForm.idConvention}" class="form-control" onchange="infosConvention()">
 		<option value="-1" label=""></option>
-		<option value="-12" label="">adadazee</option>
 		<option th:each="element : ${rdtPrimaireForm.listeConventions}"
 				th:value="${element.idConvention}" th:text="${element.convention}">
 		</option>

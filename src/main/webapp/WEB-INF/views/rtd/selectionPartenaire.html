@@ -1,7 +1,7 @@
 	<!-- Sélection du partenaire -->
+	
 	<div class="dropdown">
-		<select th:field="*{rdtPrimaireForm.idPartenaire}"
-			class="form-control">
+		<select th:field="*{rdtPrimaireForm.idPartenaire}" class="form-control">
 			<option value="-1" label=""></option>
 			<option th:each="element : ${rdtPrimaireForm.listePartenaires}"
 				th:value="${element.idPartenaire}" th:text="${element.partenaire}"></option>

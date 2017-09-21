@@ -21,37 +21,38 @@ public class SelectionPrimaireControleur { // Controlleur de selection partenair
 	@Autowired
 	private IConventionServices conventionServices; // lien avec les services 
 	
-	
+	@GetMapping("/objetPartenaire")
+	String objetPartenaire(Principal principal, Model model, @RequestParam (name = "idPartenaire") String idPartenaire) {
+		RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
+		rdtPrimaireForm.setObjetPartenaire(partenaireServices.objetPartenaire(new Long(idPartenaire)));
+		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
+		return("rtd/descriptionPartenaire");
+	} // objetPartenaire
+
 	@GetMapping("/selectionConventions")
 	String selectionConvention(Principal principal, Model model, @RequestParam (name = "idPartenaire") String idPartenaire) {
-		
 		List<Convention> conventions = partenaireServices.listeConventions(new Long(idPartenaire));
 		RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
 		rdtPrimaireForm.setListeConventions(conventions);
 		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
-		
 		return("rtd/selectionConventions");
 	} // selectionConvention
 
-	@GetMapping("/objetPartenaire")
-	String objetPartenaire(Principal principal, Model model, @RequestParam (name = "idPartenaire") String idPartenaire) {
-		
-		RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
-		rdtPrimaireForm.setObjetPartenaire(partenaireServices.objetPartenaire(new Long(idPartenaire)));
-		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
-		
-		return("rtd/objetPartenaire");
-	} // objetPartenaire
 
-	
 	@GetMapping("/objetConvention")
 	String objetConvention(Principal principal, Model model, @RequestParam (name = "idConvention") String idConvention) {
-		
 		RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
 		rdtPrimaireForm.setObjetConvention(conventionServices.objetConvention(new Long(idConvention)));
 		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
-		
 		return("rtd/objetConvention");
+	} // objetConvention
+	
+	@GetMapping("/statusConvention")	
+	String statusConvention(Principal principal, Model model, @RequestParam (name = "idConvention") String idConvention) {
+		RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
+		rdtPrimaireForm.setObjetConvention(conventionServices.objetConvention(new Long(idConvention)));
+		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
+		return("rtd/statusConvention");
 	} // objetConvention
 	
 } // class SelectionPrimaireControleur

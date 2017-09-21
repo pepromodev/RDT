@@ -27,10 +27,10 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-2">
-							<div th:replace="rtd/selectionPrimaire"></div>
+							<div th:replace="rtd/selectionPartenaire"></div>
 						</div>
 						<div class="col-lg-2">Description :</div>
-						<div th:replace="rtd/objetPartenaire"></div>
+						<div th:replace="rtd/descriptionPartenaire"></div>
 					</div>
 				</div>
 			</div>
@@ -49,15 +49,30 @@
 							<div class="row">
 								<div th:replace="rtd/selectionConventions"></div>
 							</div>
+ 							<p>
  							<div class="row">
+ 								<div class="col-lg-2"> </div>
  								<div class="col-lg-3">Etat :</div>
-								<div th:replace="rtd/etatConvention"></div>
+								<div th:replace="rtd/statusConvention"></div>
 							</div>
 						</div>
  						<div class="col-lg-1">Objet</div>
  						<div th:replace="rtd/objetConvention"></div>
  					</div>
 				</div>
+			</div>
+		</div>
+		<div class="panel panel-primary"> <!-- onglets d'informations -->
+			<ul class="nav nav-tabs">
+			 	<li class="active"><a href="#tab1" data-toggle="tab">Contacts</a></li>
+			 	<li><a href="#tab2" data-toggle="tab">Suivi des Contacts</a></li>
+			 	<li><a href="#tab3" data-toggle="tab">Contrats signés avec le client</a></li>
+			 	<li><a href="#tab4" data-toggle="tab">Suivi des actions
+			<div class="tab-content">
+			 	<div class="tab-pane active" id="tab1"><div th:replace="rtd/ongListeContacts"></div></div>
+			 	<div class="tab-pane" id="tab2"><div th:replace="rtd/ongSuiviContacts"></div></div>
+			 	<div class="tab-pane" id="tab3"><div th:replace="rtd/ongContratsSignes"></div></div>
+			 	<div class="tab-pane" id="tab4"><div th:replace="rtd/ongSuiviActions"></div></div>
 			</div>
 		</div>
 	</div> <!-- class "container" -->
