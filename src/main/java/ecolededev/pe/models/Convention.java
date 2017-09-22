@@ -17,7 +17,7 @@ public class Convention {
 	private String objet;
 	@Column(name="status")
 	private String status;
-	@OneToMany
+	@ManyToMany
 	private List<Contact> listeContacts;
 	@OneToMany 
 	private List<Document> listeDocuments;

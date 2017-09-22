@@ -55,4 +55,12 @@ public class SelectionPrimaireControleur { // Controlleur de selection partenair
 		return("rtd/statusConvention");
 	} // objetConvention
 	
+	@GetMapping("/ongListeContacts")	
+	String listeContacts(Principal principal, Model model, @RequestParam (name = "idConvention") String idConvention) {
+		RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
+		rdtPrimaireForm.setListeContacts(conventionServices.listeContacts(new Long(idConvention)));
+		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
+		return("rtd/ongListeContacts");
+	} // objetConvention
+	
 } // class SelectionPrimaireControleur

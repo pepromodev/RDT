@@ -3,6 +3,7 @@ package ecolededev.pe.controleur.selectionprimaire;
 import java.util.ArrayList;
 import java.util.List;
 
+import ecolededev.pe.models.Contact;
 import ecolededev.pe.models.Convention;
 import ecolededev.pe.models.Partenaire;
 
@@ -13,6 +14,7 @@ public class RdtPrimaireForm {
 	private List<Convention> listeConventions = new ArrayList<>();
 	private Long idConvention;
 	private Convention objetConvention = new Convention();
+	private List<Contact> listeContacts = new ArrayList<>();
 	
 //	Setteurs
 	public void setIdPartenaire(Long idPartenaire)						{ this.idPartenaire = idPartenaire; }
@@ -21,6 +23,7 @@ public class RdtPrimaireForm {
 	public void setListeConventions(List<Convention> listeConventions)	{ this.listeConventions = listeConventions; }
 	public void setIdConvention(Long idConvention)						{ this.idConvention = idConvention; }
 	public void setObjetConvention(Convention objetConvention)			{ this.objetConvention = objetConvention; }
+	public void setListeContacts(List<Contact> listeContacts)			{ this.listeContacts = listeContacts; }
 
 //	Getteurs
 	public Long getIdPartenaire()					{ return idPartenaire; }
@@ -29,6 +32,7 @@ public class RdtPrimaireForm {
 	public List<Convention> getListeConventions()	{ return listeConventions; }
 	public Long getIdConvention()					{ return idConvention; }
 	public Convention getObjetConvention()			{ return objetConvention; }
+	public List<Contact> getListeContacts()			{ return listeContacts; }
 	
 	
 	

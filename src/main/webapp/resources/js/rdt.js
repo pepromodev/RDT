@@ -51,4 +51,12 @@ function infosConvention() {
 	}).done(function(html) {
 		$("#fragmentStatusConvention").replaceWith(html);
 	});
+/*	Récuperer la liste des contacts de la convention sélectionnée */
+/*	Afficher la liste des contacts de la convention sélectionnée  */
+	$.ajax({
+		url : "ongListeContacts?idConvention=" + idConventionSelectionne,
+		cache : false
+	}).done(function(html) {
+		$("#fragmentListeContacts").replaceWith(html);
+	});
 };
