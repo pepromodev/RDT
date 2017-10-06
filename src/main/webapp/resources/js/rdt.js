@@ -43,6 +43,7 @@ function infosConvention() {
 	}).done(function(html) {
 		$("#fragmentObjetConvention").replaceWith(html);
 	});
+	
 /*	Récuperer les données relatives à la convention sélectionnée */
 /*	Afficher le status de la convention sélectionnée             */
 	$.ajax({
@@ -51,12 +52,22 @@ function infosConvention() {
 	}).done(function(html) {
 		$("#fragmentStatusConvention").replaceWith(html);
 	});
+	
 /*	Récuperer la liste des contacts de la convention sélectionnée */
 /*	Afficher la liste des contacts de la convention sélectionnée  */
-	$.ajax({
-		url : "ongListeContacts?idConvention=" + idConventionSelectionne,
-		cache : false
-	}).done(function(html) {
-		$("#fragmentListeContacts").replaceWith(html);
-	});
+		$.ajax({
+			url : "ongListeContacts?idConvention=" + idConventionSelectionne,
+			cache : false
+		}).done(function(html) {
+			$("#fragmentListeContacts").replaceWith(html);
+		});
+		
+/*	Récuperer la liste des rencontres de la convention sélectionnée */
+/*	Afficher la liste des rencontres de la convention sélectionnée  */
+		$.ajax({
+			url : "ongSuiviContacts?idConvention=" + idConventionSelectionne,
+			cache : false
+		}).done(function(html) {
+			$("#fragmentSuiviContacts").replaceWith(html);
+		});
 };

@@ -53,7 +53,7 @@ public class SelectionPrimaireControleur { // Controlleur de selection partenair
 		rdtPrimaireForm.setObjetConvention(conventionServices.objetConvention(new Long(idConvention)));
 		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
 		return("rtd/statusConvention");
-	} // objetConvention
+	} // statusConvention
 	
 	@GetMapping("/ongListeContacts")	
 	String listeContacts(Principal principal, Model model, @RequestParam (name = "idConvention") String idConvention) {
@@ -61,6 +61,14 @@ public class SelectionPrimaireControleur { // Controlleur de selection partenair
 		rdtPrimaireForm.setListeContacts(conventionServices.listeContacts(new Long(idConvention)));
 		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
 		return("rtd/ongListeContacts");
-	} // objetConvention
+	} // listeContacts
+	
+	@GetMapping("/ongSuiviContacts")	
+	String listeRencontres(Principal principal, Model model, @RequestParam (name = "idConvention") String idConvention) {
+		RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
+		rdtPrimaireForm.setListeRencontres(conventionServices.listeRencontres(new Long(idConvention)));
+		model.addAttribute("rdtPrimaireForm", rdtPrimaireForm);
+		return("rtd/ongSuiviContacts");
+	} // listeRencontres
 	
 } // class SelectionPrimaireControleur

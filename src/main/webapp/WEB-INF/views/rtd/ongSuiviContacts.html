@@ -1,1 +1,33 @@
-Ici le suivi des contacts
+<div id="fragmentSuiviContacts">
+	<div class="container">
+		<b>
+			<div class="row">
+				<div class="col-sm-1">Date de la rencontre</div>
+				<div class="col-sm-1">Nature</div>
+				<div class="col-sm-1">Participants</div>
+				<div class="col-sm-1">Participants PE</div>
+				<div class="col-sm-2">Ordre du Jour</div>
+				<div class="col-sm-1">Nature du CR</div>
+				<div class="col-sm-1">Date de la prochaine rencontre</div>
+				<div class="col-sm-1">Commentaire</div>
+				<div class="col-sm-1">Date de début</div>
+				<div class="col-sm-1">Date de fin</div>
+			</div>
+		</b>
+		<div class="form-control">
+			<div class="row" th:each="element : ${rdtPrimaireForm.listeRencontres}"
+				th:if="${!element.pe}">
+				<div class="col-sm-1" th:text="${element.dateRenc}"></div>
+				<div class="col-sm-1" th:text="${element.nature}"></div>
+				<div class="col-sm-2" th:text="${element.participants}"></div>
+				<div class="col-sm-1" th:text="${element.participantsPE}"></div>
+				<div class="col-sm-1" th:text="${element.ordreDuJour}"></div>
+				<div class="col-sm-1" th:text="${element.natureCR}"></div>
+				<div class="col-sm-1" th:text="${element.prochaine}"></div>
+				<div class="col-sm-1" th:text="${element.commentaire}"></div>
+				<div class="col-sm-1" th:text="${element.dateDeb}"></div>
+				<div class="col-sm-1" th:text="${element.dateFin}"></div>
+			</div>
+		</div>
+	</div>
+</div>

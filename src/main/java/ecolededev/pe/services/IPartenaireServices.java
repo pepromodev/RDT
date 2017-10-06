@@ -14,5 +14,6 @@ public interface IPartenaireServices {
 	public List<Partenaire> listePartenaire();
 	public List<Convention> listeConventions(Long  idPartenaire);
 	public Partenaire objetPartenaire(Long idPartenaire);
+	public List<Partenaire> findByPartenaire (String nomPartenaire);
 
 } // interface IPartenaireServices

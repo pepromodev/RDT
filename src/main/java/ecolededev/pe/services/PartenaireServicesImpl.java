@@ -23,4 +23,7 @@ public class PartenaireServicesImpl implements IPartenaireServices {
 	@Override
 	public Partenaire objetPartenaire (Long  idPartenaire)			{ return partenaireRepository.findOne(idPartenaire); }
 
+	@Override
+	public List<Partenaire> findByPartenaire(String nomPartenaire)	{ return partenaireRepository.findByPartenaire(nomPartenaire); }
+
 } // class PartenaireServicesImpl

@@ -14,6 +14,7 @@ import ecolededev.pe.models.Rencontre;
 @Service
 public interface IConventionServices {
 	public Convention objetConvention (Long idConvention);
+	public Convention findByOldIdConvention (long oldIdConvention);
 	public List<Contact> listeContacts (Long idConvention);
 	public List<Document> listeDocuments (Long idConvention);
 	public List<Rencontre> listeRencontres (Long idConvention);

@@ -6,6 +6,7 @@ import java.util.List;
 import ecolededev.pe.models.Contact;
 import ecolededev.pe.models.Convention;
 import ecolededev.pe.models.Partenaire;
+import ecolededev.pe.models.Rencontre;
 
 public class RdtPrimaireForm {
 	private Long idPartenaire;
@@ -15,6 +16,7 @@ public class RdtPrimaireForm {
 	private Long idConvention;
 	private Convention objetConvention = new Convention();
 	private List<Contact> listeContacts = new ArrayList<>();
+	private List<Rencontre> listeRencontres = new ArrayList<>();
 	
 //	Setteurs
 	public void setIdPartenaire(Long idPartenaire)						{ this.idPartenaire = idPartenaire; }
@@ -24,6 +26,7 @@ public class RdtPrimaireForm {
 	public void setIdConvention(Long idConvention)						{ this.idConvention = idConvention; }
 	public void setObjetConvention(Convention objetConvention)			{ this.objetConvention = objetConvention; }
 	public void setListeContacts(List<Contact> listeContacts)			{ this.listeContacts = listeContacts; }
+	public void setListeRencontres(List<Rencontre> listeRencontres)		{ this.listeRencontres = listeRencontres; }
 
 //	Getteurs
 	public Long getIdPartenaire()					{ return idPartenaire; }
@@ -33,6 +36,7 @@ public class RdtPrimaireForm {
 	public Long getIdConvention()					{ return idConvention; }
 	public Convention getObjetConvention()			{ return objetConvention; }
 	public List<Contact> getListeContacts()			{ return listeContacts; }
+	public List<Rencontre> getListeRencontre()		{ return listeRencontres; }
 	
 	
 	

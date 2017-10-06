@@ -24,5 +24,7 @@ public interface ConventionRepository extends JpaRepository<Convention, Long> {
 	
 	@Query ("SELECT listeServices FROM Convention c WHERE c.idConvention = :idConvention")
 	List<Service> getlisteServices (@Param("idConvention") Long idConvention);
+	
+	List<Convention> findByOldIdConvention (long oldIdConvention);
 
 } // interface ConvenionRepository

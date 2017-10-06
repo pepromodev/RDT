@@ -20,17 +20,17 @@ public class Contact {
 	@Column(name="mail")
 	private String mail;
 	@Column(name="mobile")
-	private int mobile;
+	private String mobile;
 	@Column(name="fixe")
-	private int fixe;
+	private String fixe;
 	@Column(name="commentaire")
 	private String commentaire;
 	@Column(name="pe")
 	private boolean pe;
-	
+
 //	Constructeur	
 	public Contact() {}
-	public Contact(String nom, String prenom, String fonction, String direction, String mail, int mobile, int fixe, String commentaire, boolean pe) {
+	public Contact(String nom, String prenom, String fonction, String direction, String mail, String mobile, String fixe, String commentaire, boolean pe) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.fonction = fonction;
@@ -49,8 +49,8 @@ public class Contact {
 	public void setFonction(String fonction)		{ this.fonction = fonction; }
 	public void setDirection(String direction)		{ this.direction = direction; }
 	public void setMail(String mail)				{ this.mail = mail; }
-	public void setMobile(int mobile)				{ this.mobile = mobile; }
-	public void setFixe(int fixe)					{ this.fixe = fixe; }
+	public void setMobile(String mobile)			{ this.mobile = mobile; }
+	public void setFixe(String fixe)				{ this.fixe = fixe; }
 	public void setCommentaire(String commentaire)	{ this.commentaire = commentaire; }
 	public void setPe(boolean pe)					{ this.pe = pe; }
 
@@ -61,8 +61,8 @@ public class Contact {
 	public String getFonction()		{ return fonction; }
 	public String getDirection()	{ return direction; }
 	public String getMail()			{ return mail; }
-	public int getMobile()			{ return mobile; }
-	public int getFixe()			{ return fixe; }
+	public String getMobile()			{ return mobile; }
+	public String getFixe()			{ return fixe; }
 	public String getCommentaire()	{ return commentaire; }
 	public boolean isPe()			{ return pe; }
 

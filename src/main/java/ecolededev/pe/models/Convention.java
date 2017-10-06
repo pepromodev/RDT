@@ -27,6 +27,8 @@ public class Convention {
 	private List<Action> listeActions;
 	@OneToMany 
 	private List<Service> listeServices;
+	@Column(name="oldIdConvention")
+	private long oldIdConvention;
 
 //	Constructeur	
 	public Convention()	{}
@@ -34,6 +36,12 @@ public class Convention {
 		this.convention = convention;
 		this.objet = objet;
 		this.status = status;
+	} // Convention
+	public Convention(String convention, String objet, String status, long oldIdConvention)	{
+		this.convention = convention;
+		this.objet = objet;
+		this.status = status;
+		this.oldIdConvention = oldIdConvention;
 	} // Convention
 
 //	Setteurs
@@ -46,6 +54,7 @@ public class Convention {
 	public void setListeRencontres(List<Rencontre> listeRencontres)	{ this.listeRencontres = listeRencontres; }
 	public void setListeActions(List<Action> listeActions)			{ this.listeActions = listeActions; }
 	public void setListeServices(List<Service> listeServices)		{ this.listeServices = listeServices; }
+	public void setOldIdConvention(long oldIdConvention)			{ this.oldIdConvention = oldIdConvention; }
 
 //	Getteurs
 	public Long getIdConvention()				{ return idConvention; }
@@ -57,6 +66,7 @@ public class Convention {
 	public List<Rencontre> getListeRencontres()	{ return listeRencontres; }
 	public List<Action> getListeActions()		{ return listeActions; }
 	public List<Service> getListeServices()		{ return listeServices; }
+	public long getOldIdConvention()			{ return oldIdConvention; }
 
 //	Autres
 	@Override
@@ -67,4 +77,7 @@ public class Convention {
 				", status=" + status + "]";
 	} // toString
 
+	public void addContact (Contact contact)	{ this.listeContacts.add(contact); }
+	
+	
 } // class Convention

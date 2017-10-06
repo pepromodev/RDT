@@ -45,4 +45,5 @@ public class Partenaire {
 				", description=" + description + "]";
 	} // toString
 
+	public void addConvention (Convention convention)	{ this.listeConventions.add(convention); }
 } // class Partenaire

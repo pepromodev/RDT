@@ -32,4 +32,10 @@ public class ConventionServicesImpl  implements IConventionServices {
 	@Override
 	public List<Action> listeActions(Long idConvention)			{ return conventionRepository.getlisteActions(idConvention); }
 
+	@Override
+	public Convention findByOldIdConvention (long oldIdConvention) { 
+		List <Convention> liste = conventionRepository.findByOldIdConvention (oldIdConvention);
+		return liste.get(0);
+	}
+
 } // class ConventionServicesImpl
