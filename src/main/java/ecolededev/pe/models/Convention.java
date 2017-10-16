@@ -78,6 +78,9 @@ public class Convention {
 	} // toString
 
 	public void addContact (Contact contact)	{ this.listeContacts.add(contact); }
+	public void addDocument (Document document)	{ this.listeDocuments.add(document); }
+	public void addRencontre (Rencontre rencontre)	{ this.listeRencontres.add(rencontre); }
+	public void addAction (Action action)	{ this.listeActions.add(action); }
 	
 	
 } // class Convention

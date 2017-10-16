@@ -32,11 +32,16 @@ public class Rencontre {
 	@Column(name="dateFin")
 	private Date dateFin;
 
+//	Constantes
+	private String[] natures = {"Enquêtes de satisfaction",		"Instances Contractuelles",
+	                            "Rencontre client",				"réception courrier",
+	                            "diffusion courrier",			"Sollicitation Direction DSI",
+	                            "Atelier Contrat de service",	"Demande d'informations"};
+	
 //	Constructeur	
 	public Rencontre() {}
-	public Rencontre(Long idRencontre, Date date, String nature, String participants, String participantsPE,
+	public Rencontre(Date date, String nature, String participants, String participantsPE,
 			String ordreDuJour, String natureCR, String prochaine, String commentaire, Date dateDeb, Date dateFin) {
-		this.idRencontre = idRencontre;
 		this.dateRenc = date;
 		this.nature = nature;
 		this.participants = participants;
@@ -74,6 +79,8 @@ public class Rencontre {
 	public String getCommentaire()		{ return commentaire; }
 	public Date getDateDeb()			{ return dateDeb; }
 	public Date getDateFin()			{ return dateFin; }
+	
+	public String[] getNatures()		{ return natures; }
 
 //	Autres
 	@Override
