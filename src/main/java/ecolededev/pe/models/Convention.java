@@ -1,5 +1,6 @@
 package ecolededev.pe.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -18,15 +19,15 @@ public class Convention {
 	@Column(name="status")
 	private String status;
 	@ManyToMany
-	private List<Contact> listeContacts;
+	private List<Contact> listeContacts = new ArrayList<Contact>();
 	@OneToMany 
-	private List<Document> listeDocuments;
+	private List<RDTDocument> listeDocuments = new ArrayList<RDTDocument>();
 	@OneToMany
-	private List<Rencontre> listeRencontres;
+	private List<Rencontre> listeRencontres = new ArrayList<Rencontre>();
 	@OneToMany 
-	private List<Action> listeActions;
+	private List<Action> listeActions = new ArrayList<Action>();
 	@OneToMany 
-	private List<Service> listeServices;
+	private List<Service> listeServices = new ArrayList<Service>();
 	@Column(name="oldIdConvention")
 	private long oldIdConvention;
 
@@ -50,7 +51,7 @@ public class Convention {
 	public void setObjet(String objet)								{ this.objet = objet; }
 	public void setStatus(String status)							{ this.status = status; }
 	public void setListeContacts(List<Contact>	listeContacts)		{ this.listeContacts = listeContacts; }
-	public void setListeDocuments(List<Document> listeDocuments)	{ this.listeDocuments = listeDocuments; }
+	public void setListeDocuments(List<RDTDocument> listeDocuments)	{ this.listeDocuments = listeDocuments; }
 	public void setListeRencontres(List<Rencontre> listeRencontres)	{ this.listeRencontres = listeRencontres; }
 	public void setListeActions(List<Action> listeActions)			{ this.listeActions = listeActions; }
 	public void setListeServices(List<Service> listeServices)		{ this.listeServices = listeServices; }
@@ -62,7 +63,7 @@ public class Convention {
 	public String getObjet()					{ return objet; }
 	public String getStatus()					{ return status; }
 	public List<Contact> getListeContacts()		{ return listeContacts; }
-	public List<Document> getListeDocuments()	{ return listeDocuments; }
+	public List<RDTDocument> getListeDocuments()	{ return listeDocuments; }
 	public List<Rencontre> getListeRencontres()	{ return listeRencontres; }
 	public List<Action> getListeActions()		{ return listeActions; }
 	public List<Service> getListeServices()		{ return listeServices; }
@@ -78,7 +79,7 @@ public class Convention {
 	} // toString
 
 	public void addContact (Contact contact)	{ this.listeContacts.add(contact); }
-	public void addDocument (Document document)	{ this.listeDocuments.add(document); }
+	public void addDocument (RDTDocument rDTDocument)	{ this.listeDocuments.add(rDTDocument); }
 	public void addRencontre (Rencontre rencontre)	{ this.listeRencontres.add(rencontre); }
 	public void addAction (Action action)	{ this.listeActions.add(action); }
 	

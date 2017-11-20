@@ -1,13 +1,16 @@
 package ecolededev.pe.home;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import ecolededev.pe.controleur.selectionprimaire.RdtInitDBForm;
 import ecolededev.pe.controleur.selectionprimaire.RdtPrimaireForm;
+import ecolededev.pe.models.Partenaire;
 import ecolededev.pe.services.IPartenaireServices;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,11 +30,26 @@ class HomeController {
 	String index(Principal principal, Model model) {
 
 		if (principal != null) {
-			RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm(); // création des données à echanger
-			model.addAttribute("rdtPrimaireForm", rdtPrimaireForm); // nom utilisé dans thymeleaf
-			rdtPrimaireForm.setListePartenaires(partenaireServices.listePartenaire()); // chargement des données depuis la base
+//			Détermination de la liste des partenaires
+//			SI la liste des partenaires est vide (il est nécessaire d'initialiser la base de données)
+//				Création des données à echanger
+//				Définition du nom utilisé dans thymeleaf
+//				Lancer l'initialisation de la base de données RDT
+			List<Partenaire> partenaires = partenaireServices.listePartenaire();
+			if (partenaires.isEmpty()) {
+				RdtInitDBForm rdtInitDBForm = new RdtInitDBForm();
+				model.addAttribute("rdtInitDBForm", rdtInitDBForm); 
+				return "rtd/initialisation/rdtDB";
 			
-			return "rtd/rtd";
+//			SINON
+//				Lancer l'application RDT
+//			FIN SI
+			} else {
+				RdtPrimaireForm rdtPrimaireForm = new RdtPrimaireForm();
+				model.addAttribute("rdtPrimaireForm", rdtPrimaireForm); 
+				rdtPrimaireForm.setListePartenaires(partenaires);
+				return "rtd/rtd";
+			}
 		} else {
 			return "home/homeNotSignedIn";
 		} // if

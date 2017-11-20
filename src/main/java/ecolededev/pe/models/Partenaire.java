@@ -1,5 +1,6 @@
 package ecolededev.pe.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ public class Partenaire {
 	@Column(name="description")
 	private String description;
 	@OneToMany
-	private List<Convention> listeConventions; 
+	private List<Convention> listeConventions = new ArrayList<Convention>();
 
 //	Constructeur	
 	public Partenaire() {}
@@ -45,5 +46,13 @@ public class Partenaire {
 				", description=" + description + "]";
 	} // toString
 
-	public void addConvention (Convention convention)	{ this.listeConventions.add(convention); }
+	public void addConvention (Convention convention)	{
+		if (this.listeConventions.isEmpty()) {
+			this.listeConventions.add(convention);
+		} else {
+			List<Convention> liste = this.listeConventions;
+			liste.add(convention);
+			this.listeConventions = liste;
+		} // if
+	} // addConvention
 } // class Partenaire

@@ -9,7 +9,7 @@ import ecolededev.pe.models.Action;
 import ecolededev.pe.models.Contact;
 import ecolededev.pe.models.Convention;
 import ecolededev.pe.models.ConventionRepository;
-import ecolededev.pe.models.Document;
+import ecolededev.pe.models.RDTDocument;
 import ecolededev.pe.models.Rencontre;
 
 @Service
@@ -18,13 +18,16 @@ public class ConventionServicesImpl  implements IConventionServices {
 	@Autowired ConventionRepository conventionRepository;
 
 	@Override
+	public List<Convention> listeConvention()					{ return conventionRepository.findAll(); }
+	
+	@Override
 	public Convention objetConvention(Long idConvention)		{ return conventionRepository.findOne (idConvention); } 
 
 	@Override
 	public List<Contact> listeContacts(Long idConvention)		{ return conventionRepository.getlisteContacts(idConvention); } 
 
 	@Override
-	public List<Document> listeDocuments(Long idConvention)		{ return conventionRepository.getlisteDocuments(idConvention); }
+	public List<RDTDocument> listeDocuments(Long idConvention)		{ return conventionRepository.getlisteDocuments(idConvention); }
 
 	@Override
 	public List<Rencontre> listeRencontres(Long idConvention)	{ return conventionRepository.getlisteRencontres(idConvention); }
@@ -37,5 +40,6 @@ public class ConventionServicesImpl  implements IConventionServices {
 		List <Convention> liste = conventionRepository.findByOldIdConvention (oldIdConvention);
 		return liste.get(0);
 	}
+
 
 } // class ConventionServicesImpl

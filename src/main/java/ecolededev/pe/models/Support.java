@@ -1,5 +1,6 @@
 package ecolededev.pe.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -14,7 +15,7 @@ public class Support {
 	@Column(name="nature")
 	private String nature;
 	@OneToMany (fetch=FetchType.EAGER)
-	private List<Contact> listeContacts;
+	private List<Contact> listeContacts = new ArrayList<Contact>();
 
 //	Constructeur	
 	public Support() {}

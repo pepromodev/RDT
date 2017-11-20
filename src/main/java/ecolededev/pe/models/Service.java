@@ -1,6 +1,7 @@
 package ecolededev.pe.models;
 
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -27,7 +28,7 @@ public class Service {
 	@Column(name="heureFin")
 	private Time heureFin;
 	@OneToMany
-	private List<Support> listeSupports;
+	private List<Support> listeSupports = new ArrayList<Support>();
 
 //	Constructeur	
 	public Service() {}

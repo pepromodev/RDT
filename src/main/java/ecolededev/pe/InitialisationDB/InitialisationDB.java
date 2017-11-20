@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ecolededev.pe.models.Action;
 import ecolededev.pe.models.Contact;
 import ecolededev.pe.models.Convention;
-import ecolededev.pe.models.Document;
+import ecolededev.pe.models.RDTDocument;
 import ecolededev.pe.models.Partenaire;
 import ecolededev.pe.models.Rencontre;
 import ecolededev.pe.services.ConventionServicesImpl;
@@ -172,7 +172,7 @@ public class InitialisationDB {
 					String[] donnee = ligne.split(";");
 					long oldIdConvention = Long.parseLong(donnee[0]); // identification convention
 					long oldLigne = Long.parseLong(donnee[1]); // identification ligne
-					Document document = new Document ("?", 							// description
+					RDTDocument rDTDocument = new RDTDocument ("?", 							// description
 													  donnee[2],					// type
 													  formatter.parse(donnee[3]),	// date conclusion
 													  formatter.parse(donnee[4]),	// date echeance
@@ -182,7 +182,7 @@ public class InitialisationDB {
 //				FIN TANT QUE
 //			FIN SI
 						Convention convention = conventionServicesImpl.findByOldIdConvention(oldIdConvention);
-						convention.addDocument(document);
+						convention.addDocument(rDTDocument);
 						res = true;
 					} // for
 				} // try

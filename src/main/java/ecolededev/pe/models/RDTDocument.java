@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Documents")
-public class Document {
+public class RDTDocument {
 	@Id
 	@GeneratedValue
 	@Column(name="idDocument")
@@ -23,8 +23,8 @@ public class Document {
 	private String colibri;
 	
 //	Constructeur	
-	public Document() {}
-	public Document(String description, String type, Date conclu, Date echeance, String colibri) {
+	public RDTDocument() {}
+	public RDTDocument(String description, String type, Date conclu, Date echeance, String colibri) {
 		this.description = description;
 		this.type = type;
 		this.dateConc = conclu;
